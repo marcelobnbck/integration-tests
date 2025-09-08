@@ -51,7 +51,6 @@ class TodoIntegrationTest {
         registry.add("spring.jpa.database-platform", () -> "org.hibernate.dialect.PostgreSQLDialect");
     }
 
-
     @Autowired MockMvc mvc;
     @Autowired ObjectMapper json;
     @Autowired TodoRepository repository;
