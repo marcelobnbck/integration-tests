@@ -12,6 +12,7 @@ It comes with full-stack integration tests powered by JUnit 5, MockMvc, and Test
 - Auto schema creation (ddl-auto=update)
 
 ## Getting Started
+
 ### 1. Prerequisites
 - Java 17+
 - Maven 3.9+
