@@ -24,7 +24,7 @@ public class TodoController {
     }
 
     @GetMapping("/{id}")
-    public Todo byId(@PathVariable Long id) {
+    public Todo byId(@PathVariable("id") Long id) {
         return repo.findById(id).orElseThrow(() -> new TodoNotFoundException(id));
     }
 
@@ -35,7 +35,7 @@ public class TodoController {
     }
 
     @PutMapping("/{id}")
-    public Todo update(@PathVariable Long id, @Valid @RequestBody Todo incoming) {
+    public Todo update(@PathVariable("id") Long id, @Valid @RequestBody Todo incoming) {
         return repo.findById(id).map(t -> {
             t.setTitle(incoming.getTitle());
             t.setDone(incoming.isDone());
@@ -45,7 +45,7 @@ public class TodoController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable("id") Long id) {
         if (!repo.existsById(id)) throw new TodoNotFoundException(id);
         repo.deleteById(id);
     }

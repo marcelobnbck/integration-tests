@@ -34,10 +34,7 @@ class TodoIntegrationTest {
     @Container
     static final PostgreSQLContainer<?> POSTGRES =
             new PostgreSQLContainer<>("postgres:16-alpine")
-//                    .withDatabaseName("testdb")
-//                    .withUsername("test")
-//                    .withPassword("test");
-                    .withDatabaseName("todo")
+                    .withDatabaseName("postgres")
                     .withUsername("postgres")
                     .withPassword("admin");
 
@@ -53,7 +50,6 @@ class TodoIntegrationTest {
         registry.add("spring.jpa.hibernate.ddl-auto", () -> "update");
         registry.add("spring.jpa.database-platform", () -> "org.hibernate.dialect.PostgreSQLDialect");
     }
-
 
     @Autowired MockMvc mvc;
     @Autowired ObjectMapper json;
