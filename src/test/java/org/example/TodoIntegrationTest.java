@@ -34,10 +34,7 @@ class TodoIntegrationTest {
     @Container
     static final PostgreSQLContainer<?> POSTGRES =
             new PostgreSQLContainer<>("postgres:16-alpine")
-//                    .withDatabaseName("testdb")
-//                    .withUsername("test")
-//                    .withPassword("test");
-                    .withDatabaseName("todo")
+                    .withDatabaseName("postgres")
                     .withUsername("postgres")
                     .withPassword("admin");
 
